@@ -73,9 +73,39 @@ Usage: `... main.py [-h] [-w | -l | -m] [{push,pull}] [value]`
 
 > Note: If a destination (output or computer) already exists, you will be asked if you want to overwrite the files with the new ones.
 
+### 2. Versioning
+
+Once obtained, you can move your output directory to another device and run the script with the opposite action to keep your progress synchronized.
+To do that, you can use Github's versioning feature to save those files in a repository.
+
+Tested method:
+1. Create and clone a new Git repository on your computer.
+2. Create your `config.json` and your `output` directory at the root of the repository.
+3. Fill in the `config.json` (you can use the `config/config.base.json` as a base).
+4. (Optional) Create a new directory and open a terminal there (`mkdir modules` && `cd modules`).
+5. Create the git submodule with `git submodule add -b main https://github.com/relhamdi/save-manager.git`.
+6. Move to the created module (`cd save-manager`).
+7. Copy and rename the `.env.default` as `.env` and fill in the paths to the `config.json` and `output` directory.
+8. Open a terminal and create the virtual environment:
+```sh
+pipenv shell
+pipenv install -d
+```
+9. Use the program as you like (always within the `save-manager` directory).
+10. Add, commit and push your files to your distant repository.
+
+If you already did those steps and want to clone this project elsewhere, don't forget to initialize the submodule after cloning:
+```sh
+git submodule init
+git submodule update
+```
+
+> Note: You can still pull updates when in the `save-manager` directory, if available.
+
 ## TODO
 
 - Allows multiple tags to be used at once
 - Automatic detection of the OS
-- Better logging process (?)
 - Option to overwrite (or not) automatically
+- Better logging process (?)
+- Remove all files before copying to have an exact file sync (?)

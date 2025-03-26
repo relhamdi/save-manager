@@ -2,7 +2,8 @@
     "python.analysis.typeCheckingMode": "basic",
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
-        "source.organizeImports": "explicit"
+        "source.organizeImports": "explicit",
+        "source.sortImports": "always"
     },
     "python.analysis.extraPaths": ["./core"]
 }

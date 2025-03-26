@@ -6,12 +6,12 @@ The program will centralize all the saves of the given games in one place to eas
 
 ## Dependencies
 
-- Python 3.10 (untested on other version)
+- Python 3.10 (untested on other versions)
 - Pydantic (for data models)
 
 Dependencies management is done using `pipenv`, you can create the same virtual environment using the following commands in the root directory:
 ```sh
-pip install pipenv # If needed
+pip install pipenv      # If needed
 pipenv shell
 pipenv install -d
 ```
@@ -104,6 +104,7 @@ git submodule update
 
 ## TODO
 
+- Test on MacOS and Linux
 - Allows multiple tags to be used at once
 - Automatic detection of the OS
 - Option to overwrite (or not) automatically
